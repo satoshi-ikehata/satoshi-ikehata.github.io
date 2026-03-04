@@ -5,49 +5,181 @@
 <title>Satoshi Ikehata</title>
 	
 <style type="text/css">
-announce {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 0;
-}
-.announcement {
-    background-color: #2c3e50;
-    padding: 10px;
-    border-radius: 10px;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    color: #f8f9fa;
+:root {
+	--bg: #f3f5f8;
+	--surface: #ffffff;
+	--text: #1d2733;
+	--muted: #5c6a78;
+	--accent: #294a73;
+	--line: #d8e0ea;
 }
 
-.announcement p {
-    margin: 5px 0; 
+html {
+	scroll-behavior: smooth;
 }
-.announcement a,
-.announcement a:visited, 
-.announcement a:hover,
-.announcement a:active {
-    color: #ffffff;
-    text-decoration: underline;
-}	
-body {
-	background: #FFFFFF;
+
+announce {
+	font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+	display: grid;
+	gap: 14px;
+	max-width: 860px;
+	margin: 16px auto 12px;
+	padding: 0 15px;
+}
+.announcement {
+	background: linear-gradient(135deg, #2f4858 0%, #3c5d70 100%);
+	padding: 16px 18px 14px;
+	border-radius: 12px;
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	color: #f8f9fa;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: left;
+	border: 1px solid rgba(200, 224, 245, 0.38);
+	border-left: 4px solid #9dc0dc;
+	box-shadow: 0 8px 20px rgba(20, 34, 54, 0.16);
+}
+
+.announcement-kicker {
+	margin: 0 0 6px 0;
+	padding: 0;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #d9ecff;
+}
+.announcement-title {
+	font-size: 17px;
+	line-height: 1.35;
+	font-weight: 700;
+	margin: 0 0 6px 0;
+	padding: 0;
+}
+
+.announcement-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+.announcement-meta-item {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.16);
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	font-size: 12px;
+	color: #eef7ff;
+}
+
+.announcement-text {
 	margin: 0;
 	padding: 0;
-	color: #000;
-	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
-	font-size: 12px;
-	line-height: 1.4;
+	color: #ecf2fa;
+	line-height: 1.6;
+}
+.announcement-text a,
+.announcement-text a:link,
+.announcement-text a:visited {
+	color: #d8ecff;
+	text-decoration: underline;
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 2px;
+}
+.announcement-text a:hover,
+.announcement-text a:focus {
+	color: #ffffff;
+}
+
+.announcement-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 12px;
+}
+.announcement-link {
+	display: inline-block;
+	padding: 7px 11px;
+	background: #f4f8fc;
+	color: #183a59;
+	border-radius: 6px;
+	font-weight: 700;
+	text-decoration: none;
+	border: 1px solid #d7e3ef;
+}
+.announcement-link:link,
+.announcement-link:visited {
+	color: #183a59;
+	text-decoration: none;
+}
+.announcement-link:hover {
+	background: #ffffff;
+	color: #102e49;
+}
+.announcement-link:focus,
+.announcement-link:active {
+	background: #ffffff;
+	color: #102e49;
+	text-decoration: none;
+}
+.announcement-link.secondary {
+	background: transparent;
+	border: 1px solid rgba(217, 236, 255, 0.75);
+	color: #e8f3ff;
+}
+.announcement-link.secondary:link,
+.announcement-link.secondary:visited {
+	color: #e8f3ff;
+}
+.announcement-link.secondary:hover {
+	background: rgba(255, 255, 255, 0.14);
+	color: #ffffff;
+}
+.announcement-link.secondary:focus,
+.announcement-link.secondary:active {
+	background: rgba(255, 255, 255, 0.2);
+	color: #ffffff;
+	text-decoration: none;
+}
+.announcement .announcement-link,
+.announcement .announcement-link:link,
+.announcement .announcement-link:visited,
+.announcement .announcement-link:hover,
+.announcement .announcement-link:focus,
+.announcement .announcement-link:active {
+	text-decoration: none;
+}
+
+.announcement .announcement-link:link,
+.announcement .announcement-link:visited {
+	background: #f4f8fc;
+	color: #183a59;
+	border-color: #d7e3ef;
+}
+
+.announcement .announcement-link.secondary:link,
+.announcement .announcement-link.secondary:visited {
+	background: transparent;
+	color: #e8f3ff;
+	border-color: rgba(217, 236, 255, 0.75);
+}
+body {
+	background: linear-gradient(180deg, #eef2f7 0%, #f8fafc 100%);
+	margin: 0;
+	padding: 28px 0;
+	color: var(--text);
+	font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+	font-size: 14px;
+	line-height: 1.7;
 }
 
 ul, ol, dl {
 	padding: 0;
 	margin: 0;
-}
-.news_table {
-	margin-left: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
 }
 h1, h2, h3, h4, h5, h6, p {
 	margin-top: 0;
@@ -60,11 +192,11 @@ a img {
 
 
 a:link {
-	color:#414958;
+	color: var(--accent);
 	text-decoration: underline;
 }
 a:visited {
-	color: #4E5869;
+	color: #345277;
 	text-decoration: underline;
 }
 a:hover, a:active, a:focus {
@@ -73,24 +205,28 @@ a:hover, a:active, a:focus {
 
 
 .container {
-	width: 80%;
-	max-width: 1260px;
-	min-width: 780px;
-	background: #FFF;
+	width: min(1100px, 92%);
+	background: var(--surface);
 	margin: 0 auto;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	box-shadow: 0 12px 36px rgba(20, 34, 54, 0.08);
+	overflow: hidden;
 }
 
 
 .header {
-	background-color: #6F7D94;
+	background-color: #f5f8fc;
 	background-image: url(hishi01.gif);
+	border-bottom: 1px solid var(--line);
 }
 
 .sidebar1 {
 	float: left;
-	width: 10%;
+	width: 0;
 	padding-bottom: 10px;
 	background-color: #FFF;
+	display: none;
 }
 .session2{
 	color: #FFF;
@@ -100,14 +236,20 @@ a:hover, a:active, a:focus {
 
 }
 .session {
-	font-size: 12px;
-	background-color: #CCC;
+	font-size: 16px;
+	background-color: #eff3f8;
+	border-left: 4px solid var(--accent);
+	color: #1b2a3d;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-radius: 6px;
 	text-align: left;
 }
 .content {
-	padding: 10px 0;
-	width: 80%;
-	float: left;
+	padding: 24px 28px 32px;
+	width: 100%;
+	float: none;
+	box-sizing: border-box;
 }
 
 .content ul, .content ol {
@@ -136,11 +278,13 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 }
 
 .footer {
-	padding: 10px 0;
-	background: #001F8C;
+	padding: 18px 0;
+	background: #1f3857;
 	position: relative;
 	clear: both;
-	color: #FFF;
+	color: #e9eef5;
+	text-align: center;
+	font-size: 12px;
 }
 
 .fltrt {
@@ -159,16 +303,125 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 }
 .image_float_left {
 	float: left;
-	margin-right: 30px;
-	margin-bottom: 30px;
+	margin-right: 24px;
+	margin-bottom: 16px;
+	border-radius: 10px;
+	border: 1px solid var(--line);
+}
+.profile-photo {
+	width: clamp(170px, 22vw, 230px);
+	height: auto;
 }
 .table_float {
-	width: 50%;
+	width: 62%;
+	border-collapse: collapse;
+}
+
+.table_float td {
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 .side_table {
 	margin-top: 50px;
 	margin-right: 10px;
 	margin-left: 10px;
+}
+
+h1 {
+	font-size: 30px;
+	line-height: 1.25;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-bottom: 8px;
+}
+
+h4.session {
+	margin-top: 26px;
+}
+
+.top-nav {
+	padding: 0 15px 16px;
+	color: var(--muted);
+	font-size: 13px;
+}
+
+.top-nav a {
+	text-decoration: none;
+	margin-right: 16px;
+}
+
+.top-nav a:hover {
+	text-decoration: underline;
+}
+
+.news_table {
+	width: 96%;
+	border-collapse: collapse;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.news_table td {
+	padding: 8px 10px;
+	border-bottom: 1px solid var(--line);
+	vertical-align: top;
+}
+
+table[width="100%"] {
+	border-collapse: collapse;
+}
+
+table[width="100%"] td {
+	padding-top: 10px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #e8edf4;
+	vertical-align: top;
+}
+
+table[width="100%"] tr:last-child td {
+	border-bottom: none;
+}
+
+@media (max-width: 900px) {
+	body {
+		padding: 10px 0;
+		font-size: 13px;
+	}
+
+	.container {
+		width: 96%;
+		border-radius: 10px;
+	}
+
+	.content {
+		padding: 16px 14px 24px;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+
+	.image_float_left {
+		float: none;
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-right: 0;
+	}
+
+	.table_float {
+		width: 100%;
+	}
+
+	.news_table {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.announcement-title {
+		font-size: 16px;
+	}
 }
 </style>
 </head>
@@ -195,7 +448,12 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     <!-- end .sidebar1 --></div>
   <div class="content">
     <h1>Welcome to Satoshi Ikehata's Home Page</h1>
-    <p><img src="my_picture.jpg" width="225" height="150" class="image_float_left" /></p>
+    <div class="top-nav">
+		<a href="#about">About</a>
+		<a href="#news">News</a>
+		<a href="#publications">Selected Papers</a>
+	</div>
+    <p><img src="my_picture2.png" class="image_float_left profile-photo" /></p>
     <table width="60%" border="0" class="table_float">
       <tr>
         <td align="left"><strong>Satoshi Ikehata, PhD</strong></td>
@@ -205,87 +463,88 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 			</td>
       </tr>
       <tr>
-	  <td align="left">Senior Researcher at DensoIT Lab working in<a href="https://d-itlab.c.titech.ac.jp/miru2022event//" target="_blank">Recognition and Learning Algoritym Laboratory in Tokyo Tech (Since 2023)</a>
+	  <td align="left">Senior Researcher at DensoIT Lab working in <a href="https://d-itlab.c.titech.ac.jp/miru2022event//" target="_blank">Recognition, Control and Learning Algoritym Laboratory in Tokyo Tech (Since 2023)</a>
       </tr>
-      <tr>
-	  <td align="left">Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</a>
-      </tr>
+
 	  <tr>
         <td align="left"> Address: 2-1-2 Hitotsubashi, Chiyoda-ku, Tokyo 101-8430<br /></td>
       </tr>
       <tr>
         <td align="left">E-mail: sikehata@nii.ac.jp</td>
       </tr>
-      <tr>
-        <td height="27" align="left"> (<a href="cv.pdf" target="_blank">curriculum vitae</a>) </td>
-      </tr>
     </table>
 <announce>
     <div class="announcement">
-        I am currently looking for talented Ph.D students at SOKENDAI. Please see more detials below: 
-	<p align="left">
-	<p><a href="https://www.soken.ac.jp/en/prog/informatics/">SOKENDAI Ph.D Program</a></p>
+		<p class="announcement-kicker">Opportunity</p>
+		<p class="announcement-title">Ph.D. Position Opening (SOKENDAI)</p>
+		<p class="announcement-meta"><span class="announcement-meta-item">Target: Ph.D.</span><span class="announcement-meta-item">International applicants welcome</span></p>
+		<p class="announcement-text">I am currently looking for talented Ph.D students (both from Japan and other countries) at SOKENDAI.</p>
+		<div class="announcement-links">
+			<a class="announcement-link" href="https://www.soken.ac.jp/en/prog/informatics/" target="_blank">SOKENDAI Ph.D Program</a>
+		</div>
+    </div>
+    <div class="announcement">
+		<p class="announcement-kicker">Internship</p>
+		<p class="announcement-title">2026 1st Call of NII International Internship Program (Master/Ph.D)</p>
+		<p class="announcement-meta"><span class="announcement-meta-item">Topic: K00501 3D Computer Vision</span><span class="announcement-meta-item">Master / Ph.D</span></p>
+		<p class="announcement-text">For applicants interested in my topic, 3D Computer Vision (K00501: 3D Computer Vision, 3D Computer Graphics), please submit this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Google Form</a>. The program mainly targets universities/institutions with an MoU with NII, but a limited number of non-MoU applicants can also be accepted. IMPORTANT NOTE: At this time, I will accept at most three students. If you have strong research ability and motivation, please feel free to apply. I do not place much emphasis on prior knowledge in my specific field. Due to the large number of applications, I cannot offer interviews to all applicants, so I will contact only the candidates who pass the initial screening to schedule an interview. </p>
+		<div class="announcement-links">
+			<a class="announcement-link" href="https://www.nii.ac.jp/en/about/international/mouresearch/internship2026-1/" target="_blank">Program Page</a>
+			<a class="announcement-link secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Interest Form</a>
+		</div>
     </div>
 </announce>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2 class="session">About me</h2>
+<h2 class="session" id="about">About me</h2>
 <p align="left">
+
+<p>- From 2020 to 2025, I was Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</ap>
 <p>- From June 2014 to November 2016, I was a post-doc researcher in Washington University in St. Louis and worked with <a href='http://www.cse.wustl.edu/~furukawa/', target = "_blank">Dr. Yasutaka Furukawa</a>. </p>
 <p>- I got my Ph. D in 2014 and MS in 2011 in University of tokyo under the supervision of <a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">Prof. Kiyoharu Aizawa</a>. </p>
 <p>- I got my BA of Psychology from the University of Tokyo in 2009 under the supervision of <a href="http://www.l.u-tokyo.ac.jp/psy/sato_ind/index.html" target="_blank">Prof. Takao Sato</a>. </p>
 <p>- I worked for<a href="http://research.microsoft.com/en-us/groups/vc/" target="_blank"> Visual Computing Group</a> at Microsoft Research Asia as a visiting student in 2011, supervised by <a href="http://research.microsoft.com/en-us/people/yasumat/" target="_blank">Dr. Yasuyuki Matsushita</a>. </p>
 
-<h2 class="session">NEWS</h2>
-<table width="90%" border="0" class="news_table">
-<tr>
-	 <td width="12%">6/2022 </td>
-	 <td width="88%">Project website of CVPR2023 work is now available.</td>
-</tr>
-	  
-<tr>
-	 <td width="12%">6/2022 </td>
-	 <td width="88%">Project website of CVPR2022 work is now available.</td>
-</tr>
 
-<tr>
-	 <td width="12%">11/2021 </td>
-	 <td width="88%">Source code of BMVC2021 work is now available.</td>
-</tr>
-
-<tr>
-	 <td width="12%">8/2018 </td>
-	 <td width="88%">Source code of ECCV2018 work is now available.</td>
- </tr>
-<tr>
-	 <td width="12%">7/2014 </td>
-	 <td width="88%">Project page of ICCV2015 work is now available.</td>
- </tr>
-<tr>
- 	 <td width="12%">7/2014 </td>
- 	 <td width="88%">Souce code of our TPAMI2014 work is now available.</td>
-</tr>
-<tr>
-	 <td width="12%">7/2014 </td>
-	 <td width="88%">Souce code of our CVPR2014 work is now available.</td>
- </tr>
- <tr>
-    <td width="12%">7/2012 </td>
-    <td width="88%">Souce code of our CVPR2012 work is now available.</td>
-  </tr>
-  <tr>
-    <td>3/2012</td>
-    <td>Open a new home page.</td>
-  </tr>
-</table>
-<h3 class="session">Class (SOKENDAI)</h3>
-	<p> Fall 2020: <a href="mediaprocessing2020.html" target="_blank">Fundamentals of Media Processing</a></p>
 <h3 class="session">Research Interests</h3>
     <p>3D Computer Vision, Deep Learning Algorithms, Multi Sensor/Modality Fusion, Human Cognition and Perception</p>
 
-<h4 class="session">Selected Papers</h4>
+<h4 class="session" id="publications">Selected Papers</h4>
 Full publication list is available at <a href="https://researchmap.jp/sikehata?lang=en" target="_blank">researchmap</a>.
 <table width="100%" border="0">
+
+<tr>
+    <td><img src="fig_cvpr2026.png" width="192" class="image_float_left" /> </td>
+    <td><strong>Teacher-Guided Routing for Sparse Vision Mixture-of-Experts.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Masahiro Kada, Ryota Yoshihashi, Satoshi Ikehata, Rei Kawakami, Ikuro Sato. In proceedings of IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), June 2026.</td>
+  </tr> </span></td>
+</tr>
+
+<tr>
+    <td><img src="fig_iclr2026.png" width="192" class="image_float_left" /> </td>
+    <td><strong>Light of Normals: Unified Feature Representation for Universal Photometric Stereo.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Hong Li, Houyuan Chen, Chongjie Ye, Zhaoxi Chen, Bohan Li, Shaocong Xu, Xianda Guo, Xuhui Liu, Yikai Wang, Baochang Zhang et al. International Conference on Learning Representations (ICLR), April 2026.</td>
+  </tr> </span></td>
+</tr>
+
+<tr>
+    <td><img src="fig_360citygml2026.png" width="192" class="image_float_left" /> </td>
+    <td><strong>360CityGML: Realistic and Interactive Urban Visualization System Integrating CityGML Model and 360&deg; Videos.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Tatsuro Banno, Mizuki Takenawa, Leslie W&ouml;hler, Satoshi Ikehata, Kiyoharu Aizawa. IEEE Transactions on Visualization and Computer Graphics, 32(2): 2420-2426, 2026.</td>
+  </tr> </span></td>
+</tr>
+
+<tr>
+    <td><img src="fig_aaai2026.png" width="192" class="image_float_left" /> </td>
+    <td><strong>Geometry Meets Light: Leveraging Geometric Priors for Universal Photometric Stereo under Limited Multi-Illumination Cues.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  King-Man Tam, Satoshi Ikehata, Yuta Asano, Zhaoyi An, Rei Kawakami. In proceedings of Annual AAAI Conference on Artificial Intelligence (AAAI, oral), January 2026.</td>
+  </tr> </span></td>
+</tr>
+
+<tr>
+    <td><img src="fig_takenawa2025.png" width="192" class="image_float_left" /> </td>
+    <td><strong>Building and Evaluating a Realistic Virtual World for Large Scale Urban Exploration from 360&deg; Videos.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Mizuki Takenawa, Naoki Sugimoto, Leslie W&ouml;hler, Satoshi Ikehata, Kiyoharu Aizawa. Multimedia Tools and Applications (preprint), December 2025.</td>
+  </tr> </span></td>
+</tr>
 
 <tr>
     <td><img src="fig_iccv2025.png" width="192" class="image_float_left" /> </td>
@@ -295,14 +554,14 @@ Full publication list is available at <a href="https://researchmap.jp/sikehata?l
 </tr>
 
 <tr>
-    <td><img src="fig_icip2025b.png" width="192" class="image_float_left" /> </td>
+    <td><img src="fig_icip2025_measure.png" width="192" class="image_float_left" /> </td>
     <td><strong>Measuring Distortion Strength With Dewarping Diffusion Models in Anomaly Detection. </strong><br />
     <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Akira Uchida, Satoshi Ikehata, Yuichi Yoshida, Ikuro Sato. In proceedings of IEEE International Conference on Image Processing (ICIP), 2025.</td>
   </tr> </span></td>
 </tr>
 
 <tr>
-    <td><img src="fig_icip2025a.png" width="192" class="image_float_left" /> </td>
+    <td><img src="fig_icip2025_perface.png" width="192" class="image_float_left" /> </td>
     <td><strong> PREFACE: Metric Learning in Perceptual Facial Similarity fo Encanced Face Anomaization. </strong><br />
     <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Haruka Kumagai, Leslie Wöhler, Satoshi Ikehata, Kiyoharu Aizawa. In proceedings of IEEE International Conference on Image Processing (ICIP), 2025.</td>
   </tr> </span></td>
@@ -320,7 +579,7 @@ Full publication list is available at <a href="https://researchmap.jp/sikehata?l
     <td><img src="fig_aaai2025.png" width="192" class="image_float_left" /> </td>
     <td><strong>
 	Rectified Lagrangian for Out-of-Distribution Detection in Modern Hopfield Networks.</strong><br />
-    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Ryo Moriai, Nakamasa Inoue, Masayuki Tanaka, Rei Kawakami, Satoshi Ikehata, Ikuro Sato. In proceedings of Annual AAAI Conference on Artificial Intelligence (AAAI), 2025.　</td>
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Ryo Moriai, Nakamasa Inoue, Masayuki Tanaka, Rei Kawakami, Satoshi Ikehata, Ikuro Sato. In proceedings of Annual AAAI Conference on Artificial Intelligence (AAAI, oral), 2025.　</td>
   </tr> </span></td>
 </tr>
 <tr>
@@ -499,7 +758,7 @@ Gumble-NeRF: Representing Unseen Objects as Part-compositional Neural Radiance F
 <h4>&nbsp;</h4>
   <!-- end .content --></div>
   <div class="footer">
-    <p>COPYRIGHT 2013-2018, SATOSHI IKEHATA All Rights Reserved.</p>
+    <p>COPYRIGHT 2013-2026, SATOSHI IKEHATA All Rights Reserved.</p>
   <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>
