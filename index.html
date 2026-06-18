@@ -42,6 +42,11 @@ announce {
 	box-shadow: 0 8px 20px rgba(20, 34, 54, 0.16);
 }
 
+[hidden],
+html[lang="ja"] [data-hide-lang="ja"] {
+	display: none !important;
+}
+
 .announcement-kicker {
 	margin: 0 0 6px 0;
 	padding: 0;
@@ -321,6 +326,11 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 	padding-top: 4px;
 	padding-bottom: 4px;
 }
+
+.profile-affiliations {
+	padding-left: 1.5em;
+}
+
 .side_table {
 	margin-top: 50px;
 	margin-right: 10px;
@@ -352,6 +362,38 @@ h4.session {
 
 .top-nav a:hover {
 	text-decoration: underline;
+}
+
+.language-switch {
+	display: flex;
+	justify-content: flex-end;
+	gap: 6px;
+	padding: 0 15px 14px;
+}
+
+.language-tab {
+	appearance: none;
+	border: 1px solid var(--line);
+	background: #f7f9fc;
+	color: var(--accent);
+	border-radius: 6px;
+	padding: 6px 12px;
+	font: inherit;
+	font-size: 13px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.language-tab:hover,
+.language-tab:focus {
+	background: #ffffff;
+	border-color: #b9c8d9;
+}
+
+.language-tab.active {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: #ffffff;
 }
 
 .news_table {
@@ -447,72 +489,102 @@ table[width="100%"] tr:last-child td {
 
     <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1>Welcome to Satoshi Ikehata's Home Page</h1>
+    <h1 data-i18n="pageTitle">Welcome to Satoshi Ikehata's Home Page</h1>
+    <div class="language-switch" aria-label="Language">
+		<button type="button" class="language-tab" data-lang-button="en">English</button>
+		<button type="button" class="language-tab" data-lang-button="ja">Japanese</button>
+	</div>
     <div class="top-nav">
-		<a href="#about">About</a>
-		<a href="#news">News</a>
-		<a href="#publications">Selected Papers</a>
+		<a href="#about" data-i18n="navAbout">About</a>
+		<a href="#news" data-i18n="navNews">News</a>
+		<a href="#publications" data-i18n="navPapers">Selected Papers</a>
 	</div>
     <p><img src="my_picture2.png" class="image_float_left profile-photo" /></p>
     <table width="60%" border="0" class="table_float">
       <tr>
-        <td align="left"><strong>Satoshi Ikehata, PhD</strong></td>
+        <td align="left"><strong data-i18n="profileName">Satoshi Ikehata, PhD</strong></td>
       </tr>
       <tr>
-        <td align="left">Associate Proffesor in  <a href="https://www.nii.ac.jp/en/" target="_blank">National Institute of Informatics (Since 2017)</a>
+        <td align="left" data-i18n="profileNii">Associate Proffesor in  <a href="https://www.nii.ac.jp/en/" target="_blank">National Institute of Informatics (Since 2017)</a>
 			</td>
       </tr>
       <tr>
-	  <td align="left">Senior Researcher at DensoIT Lab working in <a href="https://d-itlab.c.titech.ac.jp/miru2022event//" target="_blank">Recognition, Control and Learning Algoritym Laboratory in Tokyo Tech (Since 2023)</a>
+        <td align="left" class="profile-affiliations" data-i18n="profileAffiliations">Concurrent affiliations:<br />Informatics Program, Graduate Institute for Advanced Studies, SOKENDAI<br />Department of Information &amp; Communication Engineering, Graduate School of Information Science and Technology, The University of Tokyo</td>
+      </tr>
+      <tr>
+	  <td align="left" data-i18n="profileDenso">Senior Researcher at DensoIT Lab working in <a href="https://d-itlab.c.titech.ac.jp/miru2022event//" target="_blank">Recognition, Control and Learning Algoritym Laboratory in Tokyo Tech (Since 2023)</a>
       </tr>
 
 	  <tr>
-        <td align="left"> Address: 2-1-2 Hitotsubashi, Chiyoda-ku, Tokyo 101-8430<br /></td>
+        <td align="left" data-i18n="profileAddress"> Address: 2-1-2 Hitotsubashi, Chiyoda-ku, Tokyo 101-8430<br /></td>
       </tr>
       <tr>
         <td align="left">E-mail: sikehata@nii.ac.jp</td>
       </tr>
     </table>
-<announce>
+<announce id="news">
     <div class="announcement">
-		<p class="announcement-kicker">Opportunity</p>
-		<p class="announcement-title">Ph.D. Position Opening (SOKENDAI)</p>
-		<p class="announcement-meta"><span class="announcement-meta-item">Target: Ph.D.</span><span class="announcement-meta-item">International applicants welcome</span></p>
-		<p class="announcement-text">I am currently looking for talented Ph.D students (both from Japan and other countries) at SOKENDAI.</p>
+		<p class="announcement-kicker" data-i18n="oppKicker">Opportunity</p>
+		<p class="announcement-title" data-i18n="sokendaiTitle">Ph.D. Position Opening (SOKENDAI)</p>
+		<p class="announcement-meta"><span class="announcement-meta-item" data-i18n="sokendaiTarget">Target: Ph.D.</span></p>
+		<p class="announcement-text" data-i18n="sokendaiText">I am currently looking for talented Ph.D students (both from Japan and other countries) at SOKENDAI.</p>
 		<div class="announcement-links">
-			<a class="announcement-link" href="https://www.soken.ac.jp/en/prog/informatics/" target="_blank">SOKENDAI Ph.D Program</a>
+			<a class="announcement-link" href="https://www.soken.ac.jp/en/prog/informatics/" target="_blank" data-i18n="sokendaiLink">SOKENDAI Ph.D Program</a>
 		</div>
     </div>
     <div class="announcement">
-		<p class="announcement-kicker">Internship</p>
-		<p class="announcement-title">2026 1st Call of NII International Internship Program (Master/Ph.D)</p>
-		<p class="announcement-meta"><span class="announcement-meta-item">Topic: K00501 3D Computer Vision</span><span class="announcement-meta-item">Master / Ph.D</span></p>
-		<p class="announcement-text">For applicants interested in my topic, 3D Computer Vision (K00501: 3D Computer Vision, 3D Computer Graphics), please submit this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Google Form</a>. The program targets universities/institutions with an MoU with NII. IMPORTANT NOTE: At this time, I will accept at most three students. If you have strong research ability and motivation, please feel free to apply. I do not place much emphasis on prior knowledge in my specific field. Due to the large number of applications, I cannot offer interviews to all applicants, so I will contact only the candidates who pass the initial screening to schedule an interview. <strong>
+		<p class="announcement-kicker" data-i18n="oppKicker">Opportunity</p>
+		<p class="announcement-title" data-i18n="utokyoTitle">Ph.D. Position Opening (University of Tokyo)</p>
+		<p class="announcement-meta"><span class="announcement-meta-item" data-i18n="utokyoTarget">Target: Master/Doctor</span></p>
+		<p class="announcement-text" data-i18n="utokyoText">I have started to accept Master/Doctor students from Graduate School of University of Tokyo (IST/Information & Communication Engineering).</p>
+		<div class="announcement-links">
+			<a class="announcement-link" href="https://www.i.u-tokyo.ac.jp/edu/course/ice/" target="_blank" data-i18n="utokyoLink">IST, University of Tokyo</a>
+		</div>
+    </div>
+    <div class="announcement" data-hide-lang="ja">
+		<p class="announcement-kicker" data-i18n="internshipKicker">Internship</p>
+		<p class="announcement-title" data-i18n="internshipTitle">2026 1st Call of NII International Internship Program (Master/Ph.D) (closed)</p>
+		<p class="announcement-meta"><span class="announcement-meta-item" data-i18n="internshipTopic">Topic: K00501 3D Computer Vision</span><span class="announcement-meta-item" data-i18n="internshipTarget">Master / Ph.D</span></p>
+		<p class="announcement-text" data-i18n="internshipText">For applicants interested in my topic, 3D Computer Vision (K00501: 3D Computer Vision, 3D Computer Graphics), please submit this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Google Form</a>. The program mainly targets universities/institutions with an MoU with NII, but a limited number of non-MoU applicants can also be accepted. IMPORTANT NOTE: At this time, I will accept at most three students. If you have strong research ability and motivation, please feel free to apply. I do not place much emphasis on prior knowledge in my specific field. Due to the large number of applications, I cannot offer interviews to all applicants, so I will contact only the candidates who pass the initial screening to schedule an interview. <strong>
 		Note: Although the application deadline for NII is April 10th (JST), applicants interested in my topic must fill this Google Form by March 27th (Fri), JST.
 </strong> </p>
 		<div class="announcement-links">
-			<a class="announcement-link" href="https://www.nii.ac.jp/en/about/international/mouresearch/internship2026-1/" target="_blank">Program Page</a>
-			<a class="announcement-link secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Interest Form</a>
+			<a class="announcement-link" href="https://www.nii.ac.jp/en/about/international/mouresearch/internship2026-1/" target="_blank" data-i18n="programPage">Program Page</a>
+			<a class="announcement-link secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank" data-i18n="interestForm">Interest Form</a>
 			<a class="announcement-link secondary" href="internship-faq.html">FAQ</a>
 		</div>
     </div>
 </announce>
-<h2 class="session" id="about">About me</h2>
+<h2 class="session" id="about" data-i18n="aboutTitle">About me</h2>
 <p align="left">
 
-<p>- From 2020 to 2025, I was Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</a>.</p>
-<p>- From June 2014 to November 2016, I was a post-doc researcher in Washington University in St. Louis and worked with <a href='http://www.cse.wustl.edu/~furukawa/', target = "_blank">Dr. Yasutaka Furukawa</a>. </p>
-<p>- I got my Ph. D in 2014 and MS in 2011 in University of tokyo under the supervision of <a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">Prof. Kiyoharu Aizawa</a>. </p>
-<p>- I got my BA of Psychology from the University of Tokyo in 2009 under the supervision of <a href="http://www.l.u-tokyo.ac.jp/psy/sato_ind/index.html" target="_blank">Prof. Takao Sato</a>. </p>
-<p>- I worked for<a href="http://research.microsoft.com/en-us/groups/vc/" target="_blank"> Visual Computing Group</a> at Microsoft Research Asia as a visiting student in 2011, supervised by <a href="http://research.microsoft.com/en-us/people/yasumat/" target="_blank">Dr. Yasuyuki Matsushita</a>. </p>
+<p data-i18n="aboutUt">- From 2020 to 2025, I was Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</a>.</p>
+<p data-i18n="aboutWustl">- From June 2014 to November 2016, I was a post-doc researcher in Washington University in St. Louis and worked with <a href='http://www.cse.wustl.edu/~furukawa/', target = "_blank">Dr. Yasutaka Furukawa</a>. </p>
+<p data-i18n="aboutPhd">- I got my Ph. D in 2014 and MS in 2011 in University of tokyo under the supervision of <a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">Prof. Kiyoharu Aizawa</a>. </p>
+<p data-i18n="aboutBa">- I got my BA of Psychology from the University of Tokyo in 2009 under the supervision of <a href="http://www.l.u-tokyo.ac.jp/psy/sato_ind/index.html" target="_blank">Prof. Takao Sato</a>. </p>
+<p data-i18n="aboutMsra">- I worked for<a href="http://research.microsoft.com/en-us/groups/vc/" target="_blank"> Visual Computing Group</a> at Microsoft Research Asia as a visiting student in 2011, supervised by <a href="http://research.microsoft.com/en-us/people/yasumat/" target="_blank">Dr. Yasuyuki Matsushita</a>. </p>
 
 
-<h3 class="session">Research Interests</h3>
-    <p>3D Computer Vision, Deep Learning Algorithms, Multi Sensor/Modality Fusion, Human Cognition and Perception</p>
+<h3 class="session" data-i18n="researchTitle">Research Interests</h3>
+    <p data-i18n="researchText">3D Computer Vision, Deep Learning Algorithms, Multi Sensor/Modality Fusion, Human Cognition and Perception</p>
 
-<h4 class="session" id="publications">Selected Papers</h4>
-Full publication list is available at <a href="https://researchmap.jp/sikehata?lang=en" target="_blank">researchmap</a>.
+<h4 class="session" id="publications" data-i18n="papersTitle">Selected Papers</h4>
+<span data-i18n="papersIntro">Full publication list is available at <a href="https://researchmap.jp/sikehata?lang=en" target="_blank">researchmap</a>.</span>
 <table width="100%" border="0">
+
+<tr>
+    <td><img src="" width="192" class="image_float_left" /> </td>
+    <td><strong>CapFrame: Text-Instructed Viewpoint Grounding in 3D Gaussian Scenes via Geometric Pseudo Labels.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Jirong Li, Satoshi Ikehata, Shuhei Kurita, Ikuro Sato. In proceedings of European Conference on Computer Vision (ECCV), September 2026.</td>
+  </tr> </span></td>
+</tr>
+
+<tr>
+    <td><img src="" width="192" class="image_float_left" /> </td>
+    <td><strong>Retrieving and Refining Winning Noise Tickets for Diffusion-Based Motion Generation.</strong><br />
+    <span id="ctl00_cph_paperSummary_gvPaperSummary_ctl05_PaperTitleLabel1"><span id="ctl00_cph_paperSummary_gvPaperSummary_ctl04_PaperTitleLabel2">  Sakuya Ota, Qing Yu, Kent Fujiwara, Satoshi Ikehata, Ikuro Sato. In proceedings of European Conference on Computer Vision (ECCV), September 2026.</td>
+  </tr> </span></td>
+</tr>
 
 <tr>
     <td><img src="fig_cvpr2026.png" width="192" class="image_float_left" /> </td>
@@ -761,8 +833,160 @@ Gumble-NeRF: Representing Unseen Objects as Part-compositional Neural Radiance F
 <h4>&nbsp;</h4>
   <!-- end .content --></div>
   <div class="footer">
-    <p>COPYRIGHT 2013-2026, SATOSHI IKEHATA All Rights Reserved.</p>
+    <p data-i18n="copyright">COPYRIGHT 2013-2026, SATOSHI IKEHATA All Rights Reserved.</p>
   <!-- end .footer --></div>
 <!-- end .container --></div>
+<script type="text/javascript">
+(function () {
+	var translations = {
+		en: {
+			pageTitle: "Welcome to Satoshi Ikehata's Home Page",
+			navAbout: "About",
+			navNews: "News",
+			navPapers: "Selected Papers",
+			profileName: "Satoshi Ikehata, PhD",
+			profileNii: 'Associate Proffesor in  <a href="https://www.nii.ac.jp/en/" target="_blank">National Institute of Informatics (Since 2017)</a>',
+			profileAffiliations: 'Concurrent affiliations:<br />Informatics Program, Graduate Institute for Advanced Studies, SOKENDAI<br />Department of Information &amp; Communication Engineering, Graduate School of Information Science and Technology, The University of Tokyo',
+			profileDenso: 'Senior Researcher at DensoIT Lab working in <a href="https://d-itlab.c.titech.ac.jp/miru2022event//" target="_blank">Recognition, Control and Learning Algoritym Laboratory in Tokyo Tech</a>',
+			profileAddress: 'Address: 2-1-2 Hitotsubashi, Chiyoda-ku, Tokyo 101-8430<br />',
+			oppKicker: "Opportunity",
+			sokendaiTitle: "Ph.D. Position Opening (SOKENDAI)",
+			sokendaiTarget: "Target: Ph.D.",
+			sokendaiText: "I am currently looking for talented Ph.D students (both from Japan and other countries) at SOKENDAI.",
+			sokendaiLink: "SOKENDAI Ph.D Program",
+			utokyoTitle: "Ph.D. Position Opening (University of Tokyo)",
+			utokyoTarget: "Target: Master/Doctor",
+			utokyoText: "I have started to accept Master/Doctor students from Graduate School of University of Tokyo (IST/Information & Communication Engineering).",
+			utokyoLink: "IST, University of Tokyo",
+			internshipKicker: "Internship",
+			internshipTitle: "2026 1st Call of NII International Internship Program (Master/Ph.D) (closed)",
+			internshipTopic: "Topic: K00501 3D Computer Vision",
+			internshipTarget: "Master / Ph.D",
+			internshipText: 'For applicants interested in my topic, 3D Computer Vision (K00501: 3D Computer Vision, 3D Computer Graphics), please submit this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Google Form</a>. The program mainly targets universities/institutions with an MoU with NII, but a limited number of non-MoU applicants can also be accepted. IMPORTANT NOTE: At this time, I will accept at most three students. If you have strong research ability and motivation, please feel free to apply. I do not place much emphasis on prior knowledge in my specific field. Due to the large number of applications, I cannot offer interviews to all applicants, so I will contact only the candidates who pass the initial screening to schedule an interview. <strong>Note: Although the application deadline for NII is April 10th (JST), applicants interested in my topic must fill this Google Form by March 27th (Fri), JST.</strong>',
+			programPage: "Program Page",
+			interestForm: "Interest Form",
+			aboutTitle: "About me",
+			aboutUt: '- From 2020 to 2025, I was Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</a>.',
+			aboutWustl: '- From June 2014 to November 2016, I was a post-doc researcher in Washington University in St. Louis and worked with <a href="http://www.cse.wustl.edu/~furukawa/" target="_blank">Dr. Yasutaka Furukawa</a>.',
+			aboutPhd: '- I got my Ph. D in 2014 and MS in 2011 in University of tokyo under the supervision of <a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">Prof. Kiyoharu Aizawa</a>.',
+			aboutBa: '- I got my BA of Psychology from the University of Tokyo in 2009 under the supervision of <a href="http://www.l.u-tokyo.ac.jp/psy/sato_ind/index.html" target="_blank">Prof. Takao Sato</a>.',
+			aboutMsra: '- I worked for <a href="http://research.microsoft.com/en-us/groups/vc/" target="_blank">Visual Computing Group</a> at Microsoft Research Asia as a visiting student in 2011, supervised by <a href="http://research.microsoft.com/en-us/people/yasumat/" target="_blank">Dr. Yasuyuki Matsushita</a>.',
+			researchTitle: "Research Interests",
+			researchText: "3D Computer Vision, Deep Learning Algorithms, Multi Sensor/Modality Fusion, Human Cognition and Perception",
+			papersTitle: "Selected Papers",
+			papersIntro: 'Full publication list is available at <a href="https://researchmap.jp/sikehata?lang=en" target="_blank">researchmap</a>.',
+			copyright: "COPYRIGHT 2013-2026, SATOSHI IKEHATA All Rights Reserved."
+		},
+		ja: {
+			pageTitle: "池畑 諭のホームページへようこそ",
+			navAbout: "プロフィール",
+			navNews: "お知らせ",
+			navPapers: "主要論文",
+			profileName: "池畑 諭, Ph.D（情報理工学）",
+			profileNii: '<a href="https://www.nii.ac.jp/" target="_blank">国立情報学研究所</a> 准教授（2017年より）',
+			profileAffiliations: '兼務所属:<br />総合研究大学院大学 先端学術院 情報学コース<br />東京大学大学院情報理工学系研究科電子情報学専攻',
+			profileDenso: '株式会社デンソーアイティーラボラトリ シニアリサーチャー <a href="https://d-itlab.c.titech.ac.jp/miru2022event//" target="_blank">デンソーアイティーLAB×東京科学大学　認識・制御・学習アルゴリズム共同研究講座</a>',
+			profileAddress: '住所: 〒101-8430 東京都千代田区一ツ橋2-1-2<br />',
+			oppKicker: "募集",
+			sokendaiTitle: "博士課程学生募集（総合研究大学院大学）",
+			sokendaiTarget: "対象: 博士課程",
+			sokendaiText: "総合研究大学院大学情報学コースにおいて、５年一貫性および博士後期課程の学生を日本国内外から募集しています。",
+			sokendaiLink: "総合研究大学院大学 博士課程",
+			utokyoTitle: "大学院生募集（東京大学）",
+			utokyoTarget: "対象: 修士課程 / 博士課程",
+			utokyoText: "東京大学大学院 情報理工学系研究科 電子情報学専攻において、修士課程・博士課程の学生受け入れを開始しました。",
+			utokyoLink: "東京大学 情報理工学系研究科 電子情報学専攻",
+			internshipKicker: "インターンシップ",
+			internshipTitle: "2026年度 第1回 NII国際インターンシッププログラム（修士・博士）（募集終了）",
+			internshipTopic: "テーマ: K00501 3次元コンピュータビジョン",
+			internshipTarget: "修士 / 博士",
+			internshipText: '私のテーマである3D Computer Vision（K00501: 3D Computer Vision, 3D Computer Graphics）に関心のある応募者は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdgs5PAs-t7XcVrzyZ8cGgHp2mbhB9-BISHrgxs-ErkC1qa-A/viewform" target="_blank">Google Form</a>に入力してください。本プログラムは主にNIIとMoUを締結している大学・機関を対象としていますが、MoUのない機関からも若干名を受け入れ可能です。今回の受け入れ上限は3名です。研究能力と意欲の高い方の応募を歓迎します。私の専門分野に関する事前知識は重視しません。応募多数のため、全員に面接を行うことはできません。一次選考を通過した候補者にのみ面接日程をご連絡します。<strong>NIIの応募締切は4月10日（JST）ですが、私のテーマに関心のある応募者は3月27日（金）（JST）までにGoogle Formへ入力してください。</strong>',
+			programPage: "プログラムページ",
+			interestForm: "応募フォーム",
+			aboutTitle: "プロフィール",
+			aboutUt: '- 2020年から2025年まで、<a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">東京大学 相澤・山肩・松井研究室</a>で客員研究員を務めました。',
+			aboutWustl: '- 2014年6月から2016年11月まで、ワシントン大学セントルイス校で博士研究員として<a href="http://www.cse.wustl.edu/~furukawa/" target="_blank">Yasutaka Furukawa 博士</a>と研究を行いました。',
+			aboutPhd: '- 2014年に東京大学で博士号、2011年に修士号を取得しました。指導教員は<a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">相澤 清晴 教授</a>です。',
+			aboutBa: '- 2009年に東京大学文学部心理学専修課程を卒業しました。指導教員は<a href="http://www.l.u-tokyo.ac.jp/psy/sato_ind/index.html" target="_blank">佐藤 隆夫 教授</a>です。',
+			aboutMsra: '- 2011年にMicrosoft Research Asiaの<a href="http://research.microsoft.com/en-us/groups/vc/" target="_blank">Visual Computing Group</a>でリサーチインターンを行いました。メンターは<a href="http://research.microsoft.com/en-us/people/yasumat/" target="_blank">Yasuyuki Matsushita 博士</a>です。',
+			researchTitle: "研究分野",
+			researchText: "3次元コンピュータビジョン、深層学習アルゴリズム、マルチセンサ・マルチモーダル融合、人間の認知・知覚",
+			papersTitle: "主要論文",
+			papersIntro: '全論文リストは <a href="https://researchmap.jp/sikehata?lang=ja" target="_blank">researchmap</a> をご覧ください。',
+			copyright: "COPYRIGHT 2013-2026, SATOSHI IKEHATA All Rights Reserved."
+		}
+	};
+
+	function getSavedLanguage() {
+		try {
+			return window.localStorage.getItem("siteLanguage");
+		} catch (error) {
+			return "";
+		}
+	}
+
+	function saveLanguage(lang) {
+		try {
+			window.localStorage.setItem("siteLanguage", lang);
+		} catch (error) {}
+	}
+
+	function getAutoLanguage() {
+		var params = new URLSearchParams(window.location.search);
+		var queryLang = params.get("lang");
+		if (queryLang === "ja" || queryLang === "en") {
+			return queryLang;
+		}
+		var savedLang = getSavedLanguage();
+		if (savedLang === "ja" || savedLang === "en") {
+			return savedLang;
+		}
+		var timeZone = "";
+		try {
+			timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+		} catch (error) {}
+		if (timeZone) {
+			return timeZone === "Asia/Tokyo" ? "ja" : "en";
+		}
+		var languages = navigator.languages || [navigator.language || ""];
+		var languageText = languages.join(",").toLowerCase();
+		var isJapanRegion = /(^|,|\-)ja($|,|\-)|jp/.test(languageText);
+		return isJapanRegion ? "ja" : "en";
+	}
+
+	function setLanguage(lang, shouldSave) {
+		var dictionary = translations[lang] || translations.en;
+		document.documentElement.lang = lang;
+		document.title = lang === "ja" ? "池畑 諭" : "Satoshi Ikehata";
+		Array.prototype.forEach.call(document.querySelectorAll("[data-i18n]"), function (element) {
+			var key = element.getAttribute("data-i18n");
+			if (dictionary[key]) {
+				element.innerHTML = dictionary[key];
+			}
+		});
+		Array.prototype.forEach.call(document.querySelectorAll("[data-lang-button]"), function (button) {
+			var isActive = button.getAttribute("data-lang-button") === lang;
+			button.classList.toggle("active", isActive);
+			button.setAttribute("aria-pressed", isActive ? "true" : "false");
+		});
+		Array.prototype.forEach.call(document.querySelectorAll("[data-hide-lang]"), function (element) {
+			var shouldHide = element.getAttribute("data-hide-lang") === lang;
+			element.hidden = shouldHide;
+			element.style.display = shouldHide ? "none" : "";
+		});
+		if (shouldSave) {
+			saveLanguage(lang);
+		}
+	}
+
+	Array.prototype.forEach.call(document.querySelectorAll("[data-lang-button]"), function (button) {
+		button.addEventListener("click", function () {
+			setLanguage(button.getAttribute("data-lang-button"), true);
+		});
+	});
+
+	setLanguage(getAutoLanguage(), false);
+})();
+</script>
 </body>
 </html>
