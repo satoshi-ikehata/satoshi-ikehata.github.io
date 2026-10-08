@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Satoshi Ikehata</title>
 	
 <style type="text/css">
@@ -98,6 +99,33 @@ html[lang="ja"] [data-hide-lang="ja"] {
 .announcement-text a:hover,
 .announcement-text a:focus {
 	color: #ffffff;
+}
+
+.announcement-callout {
+	margin-top: 12px;
+	padding: 12px 14px;
+	border: 1px solid rgba(217, 236, 255, 0.5);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.announcement-callout-title,
+.announcement-deadline {
+	margin: 0 0 6px;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.5;
+	color: #ffffff;
+}
+
+.announcement-callout .announcement-deadline {
+	margin: 8px 0 0;
+}
+
+.announcement-other-deadlines {
+	margin-top: 12px;
+	font-size: 12px;
 }
 
 .announcement-links {
@@ -545,19 +573,25 @@ table[width="100%"] tr:last-child td {
 		<p class="announcement-kicker" data-i18n="internshipKicker">Internship</p>
 		<p class="announcement-title" data-i18n="internshipTitle">2026 2nd Call of NII International Internship Program (Master/Ph.D)</p>
 		<p class="announcement-meta"><span class="announcement-meta-item" data-i18n="internshipTopic">Topic: K00501 3D Computer Vision</span><span class="announcement-meta-item" data-i18n="internshipTarget">Master / Ph.D</span></p>
-		<p class="announcement-text" data-i18n="internshipText">For applicants interested in my topic, 3D Computer Vision (K00501: 3D Computer Vision, 3D Computer Graphics), please submit this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzBjjK1QiXcAVEG2nGcCRNrWQSFqLzd1YDx0c47rGSHPvsLA/viewform?usp=dialog" target="_blank">Google Form</a>. The program mainly targets universities/institutions with an MoU with NII, but a limited number of non-MoU applicants can also be accepted. IMPORTANT NOTE: At this time, I will accept at most two students. If you have strong research ability and motivation, please feel free to apply. I do not place much emphasis on prior knowledge in my specific field. Due to the large number of applications, I cannot offer interviews to all applicants, so I will contact only the candidates who pass the initial screening to schedule an interview. <strong>
-		Note: The NII application deadline is October 23, 2026 at 17:00 JST, but applicants interested in my topic must submit this Google Form by October 16, 2026 (Fri), JST.
-</strong> </p>
+		<p class="announcement-text" data-i18n="internshipText">If you are interested in my topic, K00501: 3D Computer Vision, 3D Computer Graphics, please complete the Interest Form. I will accept at most two students and welcome applicants with strong research ability and motivation; prior knowledge in my specific field is not essential. The program mainly targets universities/institutions with an MoU with NII, with a limited number of places for non-MoU applicants.</p>
+		<div class="announcement-callout">
+			<p class="announcement-callout-title" data-i18n="internshipVideoTitle">Video presentation required: up to 15 minutes</p>
+			<p class="announcement-text" data-i18n="internshipVideoText">Due to the large number of applications, please submit a short video presentation in place of an individual interview. Email a link (e.g., Google Drive or an unlisted YouTube video) to <a href="mailto:sikehata@nii.ac.jp">sikehata@nii.ac.jp</a>. See the guidelines below for the required presentation content.</p>
+			<p class="announcement-deadline" data-i18n="internshipVideoDeadline">Video deadline: October 14, 2026 (AOE / Anywhere on Earth)</p>
+		</div>
 		<div class="announcement-links">
-			<a class="announcement-link" href="https://www.nii.ac.jp/en/about/international/mouresearch/internship2026-2/" target="_blank" data-i18n="programPage">Program Page</a>
+			<a class="announcement-link" href="internship-video.html" data-i18n="videoGuidelines">Video Presentation Guidelines</a>
 			<a class="announcement-link secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdzBjjK1QiXcAVEG2nGcCRNrWQSFqLzd1YDx0c47rGSHPvsLA/viewform?usp=dialog" target="_blank" data-i18n="interestForm">Interest Form</a>
+			<a class="announcement-link secondary" href="https://www.nii.ac.jp/en/about/international/mouresearch/internship2026-2/" target="_blank" data-i18n="programPage">Program Page</a>
 			<a class="announcement-link secondary" href="internship-faq.html">FAQ</a>
 		</div>
+		<p class="announcement-text announcement-other-deadlines" data-i18n="internshipOtherDeadlines">Other deadlines: Interest Form &mdash; October 16, 2026 (JST); formal NII application &mdash; October 23, 2026 at 17:00 JST.</p>
     </div>
 </announce>
 <h2 class="session" id="about" data-i18n="aboutTitle">About me</h2>
 <p align="left">
 
+<p data-i18n="aboutScienceTokyo">- From 2023 to March 2025, I was a Specially Appointed Associate Professor at Institute of Science Tokyo, in its joint research program with Denso IT Laboratory.</p>
 <p data-i18n="aboutUt">- From 2020 to 2025, I was Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</a>.</p>
 <p data-i18n="aboutWustl">- From June 2014 to November 2016, I was a post-doc researcher in Washington University in St. Louis and worked with <a href='http://www.cse.wustl.edu/~furukawa/', target = "_blank">Dr. Yasutaka Furukawa</a>. </p>
 <p data-i18n="aboutPhd">- I got my Ph. D in 2014 and MS in 2011 in University of tokyo under the supervision of <a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">Prof. Kiyoharu Aizawa</a>. </p>
@@ -875,10 +909,16 @@ Gumble-NeRF: Representing Unseen Objects as Part-compositional Neural Radiance F
 			internshipTitle: "2026 2nd Call of NII International Internship Program (Master/Ph.D)",
 			internshipTopic: "Topic: K00501 3D Computer Vision",
 			internshipTarget: "Master / Ph.D",
-			internshipText: 'For applicants interested in my topic, 3D Computer Vision (K00501: 3D Computer Vision, 3D Computer Graphics), please submit this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzBjjK1QiXcAVEG2nGcCRNrWQSFqLzd1YDx0c47rGSHPvsLA/viewform?usp=dialog" target="_blank">Google Form</a>. The program mainly targets universities/institutions with an MoU with NII, but a limited number of non-MoU applicants can also be accepted. IMPORTANT NOTE: At this time, I will accept at most two students. If you have strong research ability and motivation, please feel free to apply. I do not place much emphasis on prior knowledge in my specific field. Due to the large number of applications, I cannot offer interviews to all applicants, so I will contact only the candidates who pass the initial screening to schedule an interview. <strong>Note: The NII application deadline is October 23, 2026 at 17:00 JST, but applicants interested in my topic must submit this Google Form by October 16, 2026 (Fri), JST.</strong>',
+			internshipText: 'If you are interested in my topic, K00501: 3D Computer Vision, 3D Computer Graphics, please complete the Interest Form. I will accept at most two students and welcome applicants with strong research ability and motivation; prior knowledge in my specific field is not essential. The program mainly targets universities/institutions with an MoU with NII, with a limited number of places for non-MoU applicants.',
+			internshipVideoTitle: "Video presentation required: up to 15 minutes",
+			internshipVideoText: 'Due to the large number of applications, please submit a short video presentation in place of an individual interview. Email a link (e.g., Google Drive or an unlisted YouTube video) to <a href="mailto:sikehata@nii.ac.jp">sikehata@nii.ac.jp</a>. See the guidelines below for the required presentation content.',
+			internshipVideoDeadline: "Video deadline: October 14, 2026 (AOE)",
+			internshipOtherDeadlines: "Other deadlines: Interest Form &mdash; October 14, 2026 (AOE); formal NII application &mdash; October 23, 2026 at 17:00 JST.",
+			videoGuidelines: "Video Presentation Guidelines",
 			programPage: "Program Page",
 			interestForm: "Interest Form",
 			aboutTitle: "About me",
+			aboutScienceTokyo: "- From 2023 to March 2025, I was a Specially Appointed Associate Professor at Institute of Science Tokyo, in its joint research program with Denso IT Laboratory.",
 			aboutUt: '- From 2020 to 2025, I was Visiting Researcher at  <a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">Aizawa-Yamakata-Matsui Lab in UTokyo (Since 2020)</a>.',
 			aboutWustl: '- From June 2014 to November 2016, I was a post-doc researcher in Washington University in St. Louis and worked with <a href="http://www.cse.wustl.edu/~furukawa/" target="_blank">Dr. Yasutaka Furukawa</a>.',
 			aboutPhd: '- I got my Ph. D in 2014 and MS in 2011 in University of tokyo under the supervision of <a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">Prof. Kiyoharu Aizawa</a>.',
@@ -916,10 +956,16 @@ Gumble-NeRF: Representing Unseen Objects as Part-compositional Neural Radiance F
 			internshipTitle: "2026年度 第2回 NII国際インターンシッププログラム（修士・博士）",
 			internshipTopic: "テーマ: K00501 3次元コンピュータビジョン",
 			internshipTarget: "修士 / 博士",
-			internshipText: '私のテーマである3D Computer Vision（K00501: 3D Computer Vision, 3D Computer Graphics）に関心のある応募者は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdzBjjK1QiXcAVEG2nGcCRNrWQSFqLzd1YDx0c47rGSHPvsLA/viewform?usp=dialog" target="_blank">Google Form</a>に入力してください。本プログラムは主にNIIとMoUを締結している大学・機関を対象としていますが、MoUのない機関からも若干名を受け入れ可能です。今回の受け入れ上限は2名です。研究能力と意欲の高い方の応募を歓迎します。私の専門分野に関する事前知識は重視しません。応募多数のため、全員に面接を行うことはできません。一次選考を通過した候補者にのみ面接日程をご連絡します。<strong>NIIの応募締切は2026年10月23日17:00（JST）ですが、私のテーマに関心のある応募者は2026年10月16日（金）（JST）までにGoogle Formへ入力してください。</strong>',
+			internshipText: '私のテーマ（K00501: 3D Computer Vision, 3D Computer Graphics）に関心のある方は、応募フォームに入力してください。今回の受け入れ上限は2名です。研究能力と意欲の高い方を歓迎し、私の専門分野に関する事前知識は必須ではありません。本プログラムは主にNIIとMoUを締結している大学・機関を対象としていますが、MoUのない機関からも若干名を受け入れ可能です。',
+			internshipVideoTitle: "15分以内の動画プレゼンテーションを提出してください",
+			internshipVideoText: '応募多数のため、個別面接に代えて短い動画プレゼンテーションを提出してください。Google DriveやYouTubeの限定公開動画などのリンクを<a href="mailto:sikehata@nii.ac.jp">sikehata@nii.ac.jp</a>へお送りください。動画に含める内容は、以下の提出ガイドをご覧ください。',
+			internshipVideoDeadline: "動画提出締切：2026年10月14日（AOE / Anywhere on Earth）",
+			internshipOtherDeadlines: "その他の締切：応募フォーム — 2026年10月16日（JST）；NIIへの正式応募 — 2026年10月23日17:00（JST）。",
+			videoGuidelines: "動画プレゼンテーション提出ガイド",
 			programPage: "プログラムページ",
 			interestForm: "応募フォーム",
 			aboutTitle: "プロフィール",
+			aboutScienceTokyo: "- 2023年から2025年3月まで、東京科学大学 特任准教授（東京科学大学×Denso IT Laboratory共同研究講座）。",
 			aboutUt: '- 2020年から2025年まで、<a href="http://www.hal.t.u-tokyo.ac.jp/lab/en/index_1.xhtml" target="_blank">東京大学 相澤・山肩・松井研究室</a>にて客員研究員。',
 			aboutWustl: '- 2014年6月から2016年11月まで、ワシントン大学セントルイス校で博士研究員として<a href="http://www.cse.wustl.edu/~furukawa/" target="_blank">Yasutaka Furukawa 博士</a>と研究。',
 			aboutPhd: '- 2014年に東京大学で博士号、2011年に修士号を取得。指導教員は<a href="http://www.hal.t.u-tokyo.ac.jp/~aizawa/index.html" target="_blank">相澤 清晴 教授</a>。',
